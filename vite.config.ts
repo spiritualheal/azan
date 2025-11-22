@@ -7,9 +7,9 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  // Base path for assets — set to the repo name for GitHub Pages by default.
-  // You can override by setting VITE_BASE environment variable when building.
-  base: process.env.VITE_BASE || "/azan/",
+  // Use a relative base so the site works on any domain or path (project page, custom domain, or local file).
+  // This is more portable than hardcoding a repo name. You can override by setting VITE_BASE when necessary.
+  base: process.env.VITE_BASE || "./",
   plugins: [react()],
   resolve: {
     alias: {
