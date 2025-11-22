@@ -30,3 +30,6 @@ Thumbs.db
 vite.config.ts.*
 *.tar.gz
 migrations
+ 
+# Local runtime/state
+.local
