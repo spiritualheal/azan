@@ -1,37 +1,110 @@
-import { type User, type InsertUser } from "@shared/schema";
+import { type Contact, type InsertContact, type Testimonial, type InsertTestimonial } from "@shared/schema";
 import { randomUUID } from "crypto";
 
-// modify the interface with any CRUD methods
-// you might need
-
 export interface IStorage {
-  getUser(id: string): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
+  createContactSubmission(contact: InsertContact): Promise<Contact>;
+  getContactSubmissions(): Promise<Contact[]>;
+  getTestimonials(): Promise<Testimonial[]>;
+  createTestimonial(testimonial: InsertTestimonial): Promise<Testimonial>;
 }
 
 export class MemStorage implements IStorage {
-  private users: Map<string, User>;
+  private contacts: Map<string, Contact>;
+  private testimonials: Map<string, Testimonial>;
 
   constructor() {
-    this.users = new Map();
+    this.contacts = new Map();
+    this.testimonials = new Map();
+    
+    // Add some initial testimonials
+    this.seedTestimonials();
   }
 
-  async getUser(id: string): Promise<User | undefined> {
-    return this.users.get(id);
+  private seedTestimonials() {
+    const initialTestimonials: InsertTestimonial[] = [
+      {
+        name: "Sarah M.",
+        service: "Spiritual Cleansing",
+        rating: 5,
+        testimonial: "After my spiritual cleansing with Chief Tanga, I felt like a completely different person. The heaviness that had been weighing me down for years just lifted. My life has completely turned around.",
+        location: "New York",
+        featured: 1,
+      },
+      {
+        name: "Michael K.",
+        service: "Breakthrough & Prosperity",
+        rating: 5,
+        testimonial: "My business was on the verge of collapse. Nothing was working despite my best efforts. Chief Tanga identified the spiritual blockages and within weeks, opportunities started flowing in. I'm forever grateful.",
+        location: "California",
+        featured: 1,
+      },
+      {
+        name: "Jennifer L.",
+        service: "Love Healing",
+        rating: 5,
+        testimonial: "Chief Tanga helped restore my relationship when all hope seemed lost. The ancestral guidance and healing brought clarity and love back into our lives. Truly powerful work.",
+        location: "Texas",
+        featured: 1,
+      },
+    ];
+
+    initialTestimonials.forEach(t => {
+      const id = randomUUID();
+      const testimonial: Testimonial = {
+        id,
+        name: t.name,
+        service: t.service,
+        rating: t.rating,
+        testimonial: t.testimonial,
+        location: t.location || null,
+        featured: t.featured || null,
+        createdAt: new Date(),
+      };
+      this.testimonials.set(id, testimonial);
+    });
   }
 
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
+  async createContactSubmission(insertContact: InsertContact): Promise<Contact> {
+    const id = randomUUID();
+    const contact: Contact = {
+      id,
+      name: insertContact.name,
+      email: insertContact.email,
+      phone: insertContact.phone || null,
+      serviceInterest: insertContact.serviceInterest || null,
+      message: insertContact.message,
+      createdAt: new Date(),
+    };
+    this.contacts.set(id, contact);
+    return contact;
+  }
+
+  async getContactSubmissions(): Promise<Contact[]> {
+    return Array.from(this.contacts.values()).sort(
+      (a, b) => b.createdAt.getTime() - a.createdAt.getTime()
     );
   }
 
-  async createUser(insertUser: InsertUser): Promise<User> {
+  async getTestimonials(): Promise<Testimonial[]> {
+    return Array.from(this.testimonials.values()).sort(
+      (a, b) => (b.featured || 0) - (a.featured || 0) || b.createdAt.getTime() - a.createdAt.getTime()
+    );
+  }
+
+  async createTestimonial(insertTestimonial: InsertTestimonial): Promise<Testimonial> {
     const id = randomUUID();
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+    const testimonial: Testimonial = {
+      id,
+      name: insertTestimonial.name,
+      service: insertTestimonial.service,
+      rating: insertTestimonial.rating,
+      testimonial: insertTestimonial.testimonial,
+      location: insertTestimonial.location || null,
+      featured: insertTestimonial.featured || null,
+      createdAt: new Date(),
+    };
+    this.testimonials.set(id, testimonial);
+    return testimonial;
   }
 }
 
