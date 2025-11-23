@@ -16,37 +16,37 @@ An independent, self-hosted web platform for Chief Tanga Azan Wani's spiritual h
 ### Local Development
 
 1. **Clone the repository**
-	```bash
-	git clone <your-repo-url>
-	cd GrandMasterHeal
-	```
+   ```bash
+   git clone <your-repo-url>
+   cd GrandMasterHeal
+   ```
 
 2. **Set up environment variables**
-	```bash
-	cp .env.example .env.local
-	```
-	Edit `.env.local` and add your database URL and other configuration.
+   ```bash
+   cp .env.example .env.local
+   ```
+   Edit `.env.local` and add your database URL and other configuration.
 
 3. **Install dependencies**
-	```bash
-	npm install
-	```
+   ```bash
+   npm install
+   ```
 
 4. **Set up the database**
-	```bash
-	npm run db:push
-	```
+   ```bash
+   npm run db:push
+   ```
 
 5. **Start the development server**
-	```bash
-	npm run dev
-	```
-	The app will be available at `http://localhost:5000`
+   ```bash
+   npm run dev
+   ```
+   The app will be available at `http://localhost:5000`
 
 6. **Type check your code**
-	```bash
-	npm run check
-	```
+   ```bash
+   npm run check
+   ```
 
 ## Project Structure
 

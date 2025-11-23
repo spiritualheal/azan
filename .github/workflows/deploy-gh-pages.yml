@@ -33,3 +33,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/public
           publish_branch: gh-pages
+          # Updated for Azan organization. Set your repo if needed:
+          # repository: Azan/azan
