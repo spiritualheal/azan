@@ -22,20 +22,9 @@
           document.documentElement.classList.add('dark');
         }
       })();
-
-      // Handle SPA redirect: if this page was loaded via 404.html redirect,
-      // restore the original path that the user tried to visit
-      (function() {
-        const redirectPath = sessionStorage.getItem('redirect_path');
-        if (redirectPath && redirectPath !== window.location.pathname) {
-          // Restore the path in browser history without reloading
-          window.history.replaceState(null, '', redirectPath);
-          sessionStorage.removeItem('redirect_path');
-        }
-      })();
     </script>
-    <script type="module" crossorigin src="/assets/index-z-sA4IV8.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-eQT0rpgx.css">
+    <script type="module" crossorigin src="./assets/index-Ceev1s8U.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-eQT0rpgx.css">
   </head>
   <body>
     <div id="root"></div>
