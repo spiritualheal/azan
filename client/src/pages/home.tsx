@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Sparkles, Shield, Heart, TrendingUp, Home, Eye, Zap, Star, CheckCircle2, ArrowRight } from "lucide-react";
-import heroImage from "@assets/generated_images/spiritual_hero_background_landscape.png";
+
 
 const services = [
   {
@@ -119,12 +119,8 @@ export default function HomePage() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Hero Background */}
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        >
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
-        </div>
+          className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"
+        ></div>
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-8 text-center">
