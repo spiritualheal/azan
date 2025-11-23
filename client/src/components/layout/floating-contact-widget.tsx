@@ -10,7 +10,7 @@ export function FloatingContactWidget() {
     {
       name: "WhatsApp",
       icon: SiWhatsapp,
-      href: "https://wa.me/1234567890",
+  href: "https://wa.me/27732552543",
       color: "text-green-500",
       testId: "button-whatsapp",
     },
@@ -24,7 +24,7 @@ export function FloatingContactWidget() {
     {
       name: "Call Us",
       icon: Phone,
-      href: "tel:+1234567890",
+  href: "tel:+27732552543",
       color: "text-primary",
       testId: "button-call",
     },

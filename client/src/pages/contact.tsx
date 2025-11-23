@@ -124,7 +124,7 @@ export default function ContactPage() {
                       <FormItem>
                         <FormLabel>Phone Number</FormLabel>
                         <FormControl>
-                          <Input type="tel" placeholder="+1 (234) 567-890" {...field} value={field.value || ""} data-testid="input-phone" />
+                          <Input type="tel" placeholder="+27 73 255 2543" {...field} value={field.value || ""} data-testid="input-phone" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -193,8 +193,8 @@ export default function ContactPage() {
                   <CardDescription>Direct consultation line</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <a href="tel:+1234567890" className="text-lg font-medium hover:text-primary transition-colors" data-testid="link-phone-contact">
-                    +1 (234) 567-890
+                  <a href="tel:+27732552543" className="text-lg font-medium hover:text-primary transition-colors" data-testid="link-phone-contact">
+                    +27 73 255 2543
                   </a>
                 </CardContent>
               </Card>
@@ -220,7 +220,7 @@ export default function ContactPage() {
                 </CardHeader>
                 <CardContent>
                   <a
-                    href="https://wa.me/1234567890"
+                    href="https://wa.me/27732552543"
                     target="_blank"
                     rel="noopener noreferrer"
                     data-testid="link-whatsapp-contact"

@@ -1,0 +1,6 @@
+your-custom-domain.example.com
+
+# To use a custom domain for GitHub Pages:
+# 1. Rename this file to `CNAME` and replace the domain above with your real domain.
+# 2. Add the CNAME file to the root of your repository and push to the branch configured for GitHub Pages.
+# 3. Configure your DNS provider to point your domain to GitHub Pages (A records / CNAME) as documented by GitHub.

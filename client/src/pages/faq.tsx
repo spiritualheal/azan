@@ -63,7 +63,7 @@ const faqs = [
     questions: [
       {
         question: "How do I book a consultation?",
-        answer: "You can book through our contact form, call us directly at +1 (234) 567-890, message us on WhatsApp, or reach out via Facebook Messenger. We'll schedule a time that works for you and provide all necessary details.",
+  answer: "You can book through our contact form, call us directly at +27 73 255 2543, message us on WhatsApp, or reach out via Facebook Messenger. We'll schedule a time that works for you and provide all necessary details.",
       },
       {
         question: "What should I bring to my first session?",

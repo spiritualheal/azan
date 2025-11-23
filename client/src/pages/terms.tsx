@@ -131,7 +131,7 @@ export default function TermsPage() {
           </p>
           <ul>
             <li>Email: contact@chieftanga.com</li>
-            <li>Phone: +1 (234) 567-890</li>
+            <li>Phone: +27 73 255 2543</li>
           </ul>
 
           <h2>Spiritual Acknowledgment</h2>

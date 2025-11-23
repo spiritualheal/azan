@@ -1,46 +1,19 @@
-modules = ["nodejs-20", "web", "postgresql-16"]
-run = "npm run dev"
-hidden = [".config", ".git", "generated-icon.png", "node_modules", "dist"]
-
-[nix]
-channel = "stable-24_05"
-
-[deployment]
-deploymentTarget = "autoscale"
-build = ["npm", "run", "build"]
-run = ["npm", "run", "start"]
-
-[[ports]]
-localPort = 5000
-externalPort = 80
-
-[[ports]]
-localPort = 36913
-externalPort = 3001
-
-[env]
-PORT = "5000"
-
-[workflows]
-runButton = "Project"
-
-[[workflows.workflow]]
-name = "Project"
-mode = "parallel"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "Start application"
-
-[[workflows.workflow]]
-name = "Start application"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "npm run dev"
-waitForPort = 5000
-
-[agent]
-integrations = ["javascript_mem_db:1.0.0"]
+# GrandMasterHeal - Independent Deployment Configuration
+# 
+# This project is fully independent and not dependent on any platform-specific
+# configuration. All deployment instructions are in README.md
+#
+# For Replit users: This file is intentionally empty. Use README.md for setup.
+# For other platforms: Follow the deployment guides in README.md for:
+# - Railway, Heroku, DigitalOcean, or self-hosted VPS
+#
+# Environment Variables Required:
+# - DATABASE_URL: PostgreSQL connection string (see .env.example)
+# - PORT: Server port (default 5000)
+# - NODE_ENV: 'development' or 'production'
+#
+# Quick Start (any platform):
+# 1. npm install
+# 2. cp .env.example .env.local (fill in your values)
+# 3. npm run db:push
+# 4. npm run dev (development) or npm run build && npm run start (production)

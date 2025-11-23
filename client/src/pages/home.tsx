@@ -324,9 +324,9 @@ export default function HomePage() {
                 Contact Chief Tanga Now
               </Button>
             </Link>
-            <a href="tel:+1234567890">
+            <a href="tel:+27732552543">
               <Button size="lg" variant="outline" className="text-lg px-8 border-primary-foreground/30 text-primary-foreground" data-testid="button-call-now">
-                Call Now: +1 (234) 567-890
+                Call Now: +27 73 255 2543
               </Button>
             </a>
           </div>

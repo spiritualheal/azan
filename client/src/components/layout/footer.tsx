@@ -113,9 +113,9 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-semibold text-lg">Contact</h4>
             <div className="space-y-3">
-              <a href="tel:+1234567890" data-testid="link-phone" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="tel:+27732552543" data-testid="link-phone" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
                 <Phone className="w-4 h-4" />
-                <span>+1 (234) 567-890</span>
+                <span>+27 73 255 2543</span>
               </a>
               <a href="mailto:contact@chieftanga.com" data-testid="link-email" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
                 <Mail className="w-4 h-4" />
