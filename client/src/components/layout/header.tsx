@@ -72,7 +72,7 @@ export function Header() {
         {/* Top info bar to make the site feel active/busy */}
         <div className="hidden md:flex items-center justify-between text-sm px-2 py-1 text-muted-foreground">
           <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2"><Phone className="w-4 h-4" /> <span>Call: +1 (555) 123-4567</span></div>
+            <div className="flex items-center gap-2"><Phone className="w-4 h-4" /> <span>Call: +27 73 255 2543</span></div>
             <div className="flex items-center gap-2"><Mail className="w-4 h-4" /> <span>hello@grandmasterheal.com</span></div>
             <div className="px-2 py-0.5 rounded-md bg-accent/10 text-accent">Bookings open • Limited slots</div>
           </div>
